@@ -1,9 +1,16 @@
-function Index() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "@/pages/Home";
+import FourOFour from "./pages/404";
+
+function App() {
     return (
-        <div className="App">
-            <h1>Hello world</h1>
-        </div>
-    );
+        <BrowserRouter>
+            <Routes>
+                <Route index element={<Home />} />
+                <Route path="*" element={<FourOFour />} />
+            </Routes>
+        </BrowserRouter>
+      );
 }
 
-export default Index;
+export default App;
