@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "@/pages/Home";
-import FourOFour from "./pages/404";
+import FourOFour from "@/pages/404";
 
 function App() {
     return (
