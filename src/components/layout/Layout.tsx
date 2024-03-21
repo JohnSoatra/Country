@@ -2,7 +2,12 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-const Layout = ({ fromTop, children }: { fromTop?: boolean, children: React.ReactNode }) => {
+type Props = {
+    fromTop?: boolean,
+    children: React.ReactNode
+}
+
+const Layout = ({ fromTop, children }: Props) => {
     return (
         <div
             className='
@@ -10,14 +15,7 @@ const Layout = ({ fromTop, children }: { fromTop?: boolean, children: React.Reac
             '>
             <Header />
             {
-                fromTop !== true &&
-                    <div
-                        className='
-                            h-[50px]
-                            md:h-[65px]
-                            lg:h-[80px]
-                        '>
-                    </div>
+                fromTop !== true && <div className='h-[70px]'></div>
             }
             { children }
             <div className='flex-1'></div>
