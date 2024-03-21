@@ -7,7 +7,8 @@ export interface Country {
 	page: number,
 	pageCount: number,
 	search: string,
-    sortOrder: string
+    sortOrder: string,
+	matched: any[]
 }
 
 const initialState: Country = {
@@ -15,7 +16,8 @@ const initialState: Country = {
 	page: 1,
 	pageCount: 0,
 	search: '',
-	sortOrder: 'asc'
+	sortOrder: 'asc',
+	matched: []
 }
 
 const countrySlice = createSlice({
@@ -36,6 +38,9 @@ const countrySlice = createSlice({
 		},
 		changeSortOrder(state: Country, action: PayloadAction<string>) {
 			state.sortOrder = action.payload;
+		},
+		changeMatched(state: Country, action: PayloadAction<any[]>) {
+			state.matched = action.payload;
 		}
 	},
 });
@@ -48,6 +53,7 @@ export const CountrySelectors = {
 	pageCount: (state: RootState) => state.country.pageCount,
 	search: (state: RootState) => state.country.search,
 	sortOrder: (state: RootState) => state.country.sortOrder,
+	matched: (state: RootState) => state.country.matched,
 }
 
 export default countrySlice.reducer;
