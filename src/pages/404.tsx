@@ -6,15 +6,13 @@ const FourOFour = () => {
         <Layout>
             <div
                 className='
-                    w-full h-full flex justify-center pt-[50px]
-                    md:pt-[75px]
-                    lg:pt-[100px]
+                    w-full h-[calc(100vh-70px)] flex justify-center items-center
                 '>
                 <h1
                     className='
-                        text-[30px] font-bold
-                        md:text-[45px]
-                        lg:text-[60px]
+                        text-[30px] font-medium
+                        md:text-[35px]
+                        lg:text-[40px]
                     '>
                     Page not found!
                 </h1>
